@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GitHub Portfolio - Explore GitHub profiles and repositories">
+    <title>GitHub Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">GitHub Portfolio</h1>
+            <div class="search-container">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="username-input" 
+                        class="form-control search-input" 
+                        placeholder="Enter GitHub username"
+                        autocomplete="off"
+                    >
+                    <button id="search-btn" class="btn btn--primary search-btn">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loading" class="loading hidden">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Fetching GitHub data...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error" class="error-container hidden">
+                <div class="error-message">
+                    <h3>User Not Found</h3>
+                    <p>Sorry, we couldn't find that GitHub user. Please check the username and try again.</p>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <section id="profile" class="profile-section hidden">
+                <div class="profile-card card">
+                    <div class="profile-header">
+                        <img id="user-avatar" src="" alt="User Avatar" class="profile-avatar">
+                        <div class="profile-info">
+                            <h2 id="user-name" class="profile-name"></h2>
+                            <p id="user-username" class="profile-username"></p>
+                            <p id="user-bio" class="profile-bio"></p>
+                            <div class="profile-meta">
+                                <span id="user-location" class="profile-location"></span>
+                                <span id="user-joined" class="profile-joined"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span id="user-repos" class="stat-number">0</span>
+                            <span class="stat-label">Repositories</span>
+                        </div>
+                        <div class="stat">
+                            <span id="user-followers" class="stat-number">0</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span id="user-following" class="stat-number">0</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                    <div class="profile-links">
+                        <a id="user-github-link" href="" target="_blank" class="btn btn--secondary">
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Repositories Section -->
+            <section id="repositories" class="repositories-section hidden">
+                <h2 class="section-title">Recent Repositories</h2>
+                <div id="repos-container" class="repos-grid">
+                    <!-- Repository cards will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
